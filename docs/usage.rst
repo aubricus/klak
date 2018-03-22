@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use Clack in a project::
+To use Klak in a project::
 
-    import clack
+    import klak

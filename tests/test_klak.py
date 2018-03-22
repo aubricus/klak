@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `clack` package."""
+"""Tests for `klak` package."""
 
 import pytest
 
 from click.testing import CliRunner
 
-from clack import clack
-from clack import cli
+from klak import klak
+from klak import cli
 
 
 @pytest.fixture
@@ -32,7 +32,7 @@ def test_command_line_interface():
     runner = CliRunner()
     result = runner.invoke(cli.main)
     assert result.exit_code == 0
-    assert 'clack.cli.main' in result.output
+    assert 'klak.cli.main' in result.output
     help_result = runner.invoke(cli.main, ['--help'])
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output

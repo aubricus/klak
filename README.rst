@@ -1,30 +1,30 @@
 =====
-Clack
+klak
 =====
 
 
-.. image:: https://img.shields.io/pypi/v/clack.svg
-        :target: https://pypi.python.org/pypi/clack
+.. image:: https://img.shields.io/pypi/v/klak.svg
+        :target: https://pypi.python.org/pypi/klak
 
-.. image:: https://img.shields.io/travis/aubricus/clack.svg
-        :target: https://travis-ci.org/aubricus/clack
+.. image:: https://img.shields.io/travis/aubricus/klak.svg
+        :target: https://travis-ci.org/aubricus/klak
 
-.. image:: https://readthedocs.org/projects/clack/badge/?version=latest
-        :target: https://clack.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/klak/badge/?version=latest
+        :target: https://klak.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 
-.. image:: https://pyup.io/repos/github/aubricus/clack/shield.svg
-     :target: https://pyup.io/repos/github/aubricus/clack/
+.. image:: https://pyup.io/repos/github/aubricus/klak/shield.svg
+     :target: https://pyup.io/repos/github/aubricus/klak/
      :alt: Updates
 
 
 
-Clack [klak]: A sharp sound or series of sounds.
+"Clack" [klak]: A sharp sound or series of sounds.
 
 
 * Free software: GNU General Public License v3
-* Documentation: https://clack.readthedocs.io.
+* Documentation: https://klak.readthedocs.io.
 
 
 Features

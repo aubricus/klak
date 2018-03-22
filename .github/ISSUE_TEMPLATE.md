@@ -1,4 +1,4 @@
-* Clack version:
+* Klak version:
 * Python version:
 * Operating System:
 

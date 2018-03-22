@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for clack."""
+"""Console script for klak."""
 import sys
 import click
 
 
 @click.command()
 def main(args=None):
-    """Console script for clack."""
+    """Console script for klak."""
     click.echo("Replace this message by putting your code into "
-               "clack.cli.main")
+               "klak.cli.main")
     click.echo("See click documentation at http://click.pocoo.org/")
     return 0
 

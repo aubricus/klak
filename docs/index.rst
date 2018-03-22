@@ -1,4 +1,4 @@
-Welcome to Clack's documentation!
+Welcome to Klak's documentation!
 ======================================
 
 .. toctree::
