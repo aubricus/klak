@@ -1,0 +1,31 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+bumpversion = "*"
+watchdog = "*"
+"flake8" = "*"
+tox = "*"
+coverage = "*"
+Sphinx = "*"
+twine = "*"
+pytest = "*"
+pytest-runner = "*"
+pylint = "*"
+"pep8" = "*"
+pydocstyle = "*"
+"autopep8" = "*"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "3.6"
