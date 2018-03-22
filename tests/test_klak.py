@@ -53,7 +53,8 @@ def test_clickfile():
         assert _clickfile.isfile()
 
         # Call import_clickfile manually
-        # since the CliRunner cannot call cli.main
+        # since the CliRunner cannot use the runner to invoke
+        # cli.main directly.
         cli.import_clickfile()
 
         # Our custom command hello_world should now be available
