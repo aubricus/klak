@@ -11,6 +11,6 @@ pytest==3.4.2
 pytest-runner==4.2
 pylint==1.8.3
 pep8==1.7.1
-pydocstyle
+pydocstyle==2.1.1
 autopep8
 mypy
