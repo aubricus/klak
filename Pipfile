@@ -12,7 +12,7 @@ watchdog = "*"
 "flake8" = "*"
 tox = "*"
 coverage = "*"
-Sphinx = "*"
+sphinx = "*"
 twine = "*"
 pytest = "*"
 pytest-runner = "*"
@@ -20,6 +20,7 @@ pylint = "*"
 "pep8" = "*"
 pydocstyle = "*"
 "autopep8" = "*"
+mypy = "*"
 
 
 [dev-packages]
