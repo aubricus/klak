@@ -21,6 +21,7 @@ pylint = "*"
 pydocstyle = "*"
 "autopep8" = "*"
 mypy = "*"
+"path.py" = "*"
 
 
 [dev-packages]
