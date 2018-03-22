@@ -1,0 +1,15 @@
+pip
+bumpversion
+wheel
+watchdog
+flake8
+tox
+coverage
+Sphinx
+twine
+pytest
+pytest-runner
+pylint
+pep8
+pydocstyle
+autopep8
