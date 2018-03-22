@@ -9,6 +9,7 @@ import enum
 import shutil
 import tempfile
 import pytest
+import click
 from click.testing import CliRunner
 from path import Path
 from klak import klak
@@ -60,3 +61,17 @@ def test_clickfile():
 
         assert result.exit_code == 0
         assert "hi!" in result.output
+
+
+def test_import_missing_clickfile():
+    """Test import missing Clickfile."""
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        with pytest.raises(click.exceptions.FileError):
+            cli.import_clickfile()
+
+
+def test_missing_clickfile():
+    """Test missing Clickfile."""
+    returncode = cli.main()
+    assert returncode == 1

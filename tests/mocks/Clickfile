@@ -6,5 +6,5 @@ from klak.cli import root
 
 @root.command()
 def hello_world():
-    """Hello world"""
+    """Hello world."""
     click.echo("hi!")

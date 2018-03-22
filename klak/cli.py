@@ -22,19 +22,29 @@ def import_clickfile():
     """Import a python file named Clickfile from os.getcwd()."""
     cwd = os.getcwd()
     clickfile_path = os.path.realpath(os.path.join(cwd, "Clickfile"))
+
     if os.path.isfile(clickfile_path):
         return import_module_from_file("usr_cmd", clickfile_path)
+    else:
+        raise click.exceptions.FileError(
+            clickfile_path, hint="Error: Could not find Clickfile!")
 
 
 @click.group()
 def root():
-    """Click n' Klak"""
+    """Click n' Klak."""
     return 0
 
 
 def main():
     """Console script for klak."""
-    import_clickfile()
+    try:
+        import_clickfile()
+    except click.exceptions.FileError as exception:
+        click.secho(
+            "\n{error}\n".format(
+                error=str(exception)), fg="red", bold=True)
+        return 1
     return root()
 
 
