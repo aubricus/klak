@@ -2,7 +2,7 @@
 # pylint: disable=no-member
 # -*- coding: utf-8 -*-
 
-"""Tests for `klak` package."""
+"""Tests for `klak` CLI."""
 
 import os
 import enum
