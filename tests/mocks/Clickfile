@@ -1,0 +1,11 @@
+# pylint: disable=C0103
+"""Mock Clickfile"""
+import click
+from klak.cli import root
+from klak.utils import run, shell
+
+
+@root.command()
+def hello_world():
+    """Hello world."""
+    click.echo("hi!")
