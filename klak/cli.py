@@ -6,6 +6,7 @@ import os
 from importlib.util import spec_from_loader, module_from_spec
 from importlib.machinery import SourceFileLoader
 import click
+from path import Path
 
 
 def import_module_from_file(module_name, path):
@@ -20,11 +21,12 @@ def import_module_from_file(module_name, path):
 
 def import_clickfile():
     """Import a python file named Clickfile from os.getcwd()."""
-    cwd = os.getcwd()
-    clickfile_path = os.path.realpath(os.path.join(cwd, "Clickfile"))
+    cwd = Path(os.getcwd())
+    clickfile_path = Path(os.path.join(cwd, "Clickfile"))
 
-    if os.path.isfile(clickfile_path):
-        return import_module_from_file("usr_cmd", clickfile_path)
+    if clickfile_path.isfile():
+        return import_module_from_file(
+            "clickfile_cmds", str(clickfile_path))
     else:
         raise click.exceptions.FileError(
             clickfile_path, hint="Error: Could not find Clickfile!")
