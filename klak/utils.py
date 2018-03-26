@@ -27,7 +27,7 @@ def run(*args, **kwargs):
     return subprocess.run(*args, **copy_kwargs)
 
 
-def shell(args, **kwargs):
+def shell(cmd, **kwargs):
     """
     Wrap subprocess.run for compat and fun.
 
@@ -55,4 +55,4 @@ def shell(args, **kwargs):
 
     """
     kwargs.setdefault("shell", True)
-    return run([args], **kwargs)
+    return run([cmd], **kwargs)
