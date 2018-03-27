@@ -2,7 +2,12 @@
 History
 =======
 
-0.2.0 (2018-03-22)
+0.2.2 (2018-03-22)
+------------------
+
+* Make `utils.shell` a little nicer to use
+
+0.2.1 (2018-03-22)
 ------------------
 
 * Fix missing `path.py` dependency
