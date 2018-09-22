@@ -23,7 +23,7 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -35,7 +35,7 @@ setup(
         ],
     },
     install_requires=requirements,
-    license="GNU General Public License v3",
+    license="MIT License",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='klak',
