@@ -45,6 +45,6 @@ setup(
     test_suite='tests',
     tests_require=TEST_REQUIREMENTS,
     url='https://github.com/aubricus/klak',
-    version='0.2.3',
+    version='0.2.4',
     zip_safe=False,
 )
