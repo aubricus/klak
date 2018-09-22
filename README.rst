@@ -4,6 +4,11 @@
 .. _Documentation: https://klak.readthedocs.io
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _Bash completions: https://klak.readthedocs.io/en/latest/usage.html#enable-bash-completions
+.. _Python 3 Subprocess Docs: https://docs.python.org/3/library/subprocess.html
+.. _Replacing Bash With Python: https://github.com/ninjaaron/replacing-bash-scripting-with-python#replacing-sed-grep-awk-etc-python-regex
+.. _Delegator - Subprocess for Humans: https://github.com/kennethreitz/delegator.py
+
 
 =====
 Klak
@@ -25,36 +30,39 @@ Klak
 
 ---------------------------------------
 
-*"Clak [klak]: A sharp sound or series of sounds."*
-
-**Click n' Klak**!
-
-`klak` is a micro-wrapper around `Click`_ that combines the ease of a *simple Makefile* and the power of `Python`_ and `Click`_!
-
-
 Support
 -------
 
 * Python 3.6.x
 * Python 3.5.x
 
+Documentation
+--------------
+* See the full `Documentation`_
+
+About
+-----
+
+*"Clak [klak]: A sharp sound or series of sounds."*
+
+**Click n' Klak**!
+
+`klak` is a minimal-wrapper around `Click`_ to enhance the simplicity of a project `Makefile` with Python.
+
+Features
+========
+
+* Ship with `Click`_ setup with the recommended `Click Setuptools Integration`_.
+* Provide a global CLI interface, `klak`.
+* Auto-load a `Clickfile` in the current working directory.
+* Easily append commands to the available `cli.root` group, `klak` (through `Click`_).
+* Easily append nested groups and commands as well (through `Click`_).
+* Easily provide `Bash completions`_ (through `Click`_).
+
 License
 --------
 
 MIT License
-
-Documentation
---------------
-* See the main `Documentation`_
-
-Features
---------
-
-* Auto-load a `Clickfile` in the current working directory.
-* Easily append commands to an available `cli.root` group.
-* Easily append nested groups and commands as well.
-* Ships with `Click`_ automatically setup with the recommended `Click Setuptools Integration`_.
-* Bash completions available!
 
 Credits
 -------

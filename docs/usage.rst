@@ -1,5 +1,8 @@
 .. _Click: http://click.pocoo.org/6/
 .. _Issues: https://github.com/aubricus/klak/issues
+.. _Python 3 Subprocess Docs: https://docs.python.org/3/library/subprocess.html
+.. _Replacing Bash With Python: https://github.com/ninjaaron/replacing-bash-scripting-with-python#replacing-sed-grep-awk-etc-python-regex
+.. _Delegator - Subprocess for Humans: https://github.com/kennethreitz/delegator.py
 
 =====
 Usage
@@ -10,34 +13,59 @@ Create a `Clickfile`
 
 If you run `klak` without a `Clickfile` in the current working directory, you will probably see this:
 
-.. code-block:: bash
+.. code-block:: console
 
     Error: Could not find Clickfile!
 
 The minimum to resolve that error would be:
 
-.. code-block:: bash
+.. code-block:: console
 
+    # In the current directory
     touch Clickfile
 
+Notes:
 
-Klak CLI
---------
+- `Clickfile` naming is required
+- `klak` currently only supports looking for the `Clickfile` in the current directory.
+
+
+Klak Command-line Interface
+---------------------------
 
 `klak` doesn't ship with any commands, but you can run the standard `--help` flag or just `klak` just the same.
 
-.. code-block:: bash
+.. code-block:: console
 
     # See available commands
     klak --help
 
 
-Adding Commands
----------------
+What is a Clickfile
+--------------------
+
+A `Clickfile` is an allegory to the classic `Makefile` and is the intended destination for your project automation commands.
+
+
+How to Use a Clickfile
+----------------------
+
+There's really zero magic going on here:
+
+1. Leverage `Click`_ to build your project automation command-line interface.
+2. Script Python as you normally would.
+
+If you're unfamiliar with Python scripting, here are some resources:
+
+- `Click`_ Docs
+- `Python 3 Subprocess Docs`_
+- `Replacing Bash With Python`_
+- `Delegator - Subprocess for Humans`_
+
+Example Clickfile
+-----------------
 
 Here's a simple `Clickfile` as an example. Head on over to the `Click`_ documentation to learn more about how to use `Click`_.
-
-**Note:** This package is still new, and I have not tested it with *every aspect of Click*. Report bugs on GitHub `Issues`_ and don't forget to read the guide to `Contributing <https://klak.readthedocs.io/en/latest/contributing.html>`_.
 
 .. code-block:: python
 
@@ -78,27 +106,27 @@ Here's a simple `Clickfile` as an example. Head on over to the `Click`_ document
         """Say goodbye to someone."""
         click.echo("Goodbye, " + name)
 
+This file results in the following help string:
 
-    # `klak` also ships with two tiny wrappers around
-    # subprocess; `run` and `shell`
-    # `run` simply calls `subprocess.run` with `check=True` by default
-    # `shell` delegates to `run` but also sets `shell=True` by default
-    @root.command()
-    def ls():
-        """Example utils.shell` usage."""
-        shell("ls -la")
+.. code-block:: console
 
-    @root.command()
-    def ls2():
-        """Example `utils.run` usage."""
-        run(["ls", "-la"])
+    Usage: klak [OPTIONS] COMMAND [ARGS]...
+
+    Click n' Klak.
+
+    Options:
+    --help  Show this message and exit.
+
+    Commands:
+    hello_world  Hello World
+    greetings    Greeting commands
 
 Enable Bash Completions
 -----------------------
 
 You can enable Bash Completions in the standard `Click`_ way:
 
-.. code-block:: bash
+.. code-block:: console
 
     eval "$(_KLAK_COMPLETE=source klak)"
 
