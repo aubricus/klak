@@ -1,7 +1,7 @@
 .. _Python: http://www.python.org/
 .. _Click: http://click.pocoo.org/6/
 .. _Click Setuptools Integration: http://click.pocoo.org/6/setuptools/
-.. _Documentation: https://klak.readthedocs.io.
+.. _Documentation: https://klak.readthedocs.io
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 

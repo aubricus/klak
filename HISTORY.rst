@@ -2,6 +2,25 @@
 History
 =======
 
+
+0.2.4 (2018-09-22)
+------------------
+
+* Fix pylint errors in setup.py
+* Fix license in setup.py
+* Fix klak spelling in CONTRIBUTING.md
+* Update pytest from 3.5.0 to 3.8.1
+* Update sphinx from 1.7.2 to 1.8.1
+* Update tox from 2.9.1 to 3.4.0
+* Update mypy from 0.580 to 0.630
+* Update autopep8 from 1.3.5 to 1.4
+* Update watchdog from 0.8.3 to 0.9.0
+* Update pylint from 1.8.3 to 2.1.1
+* Update pip from 9.0.3 to 18.0
+* Update wheel from 0.30.0 to 0.31.1
+* Update README.rst
+
+
 0.2.3 (2018-03-30)
 ------------------
 
