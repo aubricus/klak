@@ -41,7 +41,7 @@ Support
 License
 --------
 
-Free software: GNU General Public License v3
+MIT License
 
 Documentation
 --------------
