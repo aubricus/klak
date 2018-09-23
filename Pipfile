@@ -16,10 +16,10 @@ pytest-runner = "*"
 pylint = "*"
 "pep8" = "*"
 pydocstyle = "*"
-"autopep8" = "*"
 mypy = "*"
 "path.py" = "*"
 click = "*"
+black = "==18.6b4"
 
 [dev-packages]
 
