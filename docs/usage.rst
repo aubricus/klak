@@ -72,7 +72,6 @@ Here's a simple `Clickfile` as an example. Head on over to the `Click`_ document
     """My Project's Clickfile!"""
 
     from klak.cli import root
-    from klak.utils import run, shell
     import click
 
 
