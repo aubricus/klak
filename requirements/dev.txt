@@ -12,6 +12,6 @@ pytest-runner==4.2
 pylint==2.1.1
 pep8==1.7.1
 pydocstyle==2.1.1
-mypy==1.63
+mypy==0.630
 click==6.7
 black==18.6b4
