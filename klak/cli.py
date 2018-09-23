@@ -25,11 +25,11 @@ def import_clickfile():
     clickfile_path = Path(os.path.join(cwd, "Clickfile"))
 
     if clickfile_path.isfile():
-        return import_module_from_file(
-            "clickfile_cmds", str(clickfile_path))
+        return import_module_from_file("clickfile_cmds", str(clickfile_path))
     else:
         raise click.exceptions.FileError(
-            clickfile_path, hint="Error: Could not find Clickfile!")
+            clickfile_path, hint="Error: Could not find Clickfile!"
+        )
 
 
 @click.group()
@@ -43,9 +43,7 @@ def main():
     try:
         import_clickfile()
     except click.exceptions.FileError as exception:
-        click.secho(
-            "\n{error}\n".format(
-                error=str(exception)), fg="red", bold=True)
+        click.secho("\n{error}\n".format(error=str(exception)), fg="red", bold=True)
         return 1
     return root()
 
