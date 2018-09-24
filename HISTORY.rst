@@ -2,6 +2,16 @@
 History
 =======
 
+0.3.3 (2018-09-23)
+------------------
+* Forgot to update HISTORY.rst!
+
+
+0.3.2 (2018-09-23)
+------------------
+* Fix bumpversion config
+
+
 0.3.1 (2018-09-23)
 ------------------
 * Fix version formatting causing PyPi upload to fail
