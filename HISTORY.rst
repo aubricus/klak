@@ -2,6 +2,13 @@
 History
 =======
 
+0.3.0 (2018-09-22)
+------------------
+* Removed klak.utils.run
+* Removed klak.utils.shell
+* Refactored to use Python Black formatting
+* Updated docs
+
 
 0.2.4 (2018-09-22)
 ------------------

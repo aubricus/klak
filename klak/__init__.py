@@ -3,5 +3,5 @@
 """Top-level package for klak."""
 
 __author__ = """Aubrey Taylor"""
-__email__ = 'aubricus@gmail.com'
-__version__ = '0.2.4'
+__email__ = "aubricus@gmail.com"
+__version__ = "__version__ = '0.3.0'"

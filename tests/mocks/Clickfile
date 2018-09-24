@@ -2,7 +2,6 @@
 """Mock Clickfile"""
 import click
 from klak.cli import root
-from klak.utils import run, shell
 
 
 @root.command()
