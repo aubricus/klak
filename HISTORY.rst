@@ -2,6 +2,10 @@
 History
 =======
 
+0.3.1 (2018-09-23)
+------------------
+* Fix version formatting causing PyPi upload to fail
+
 0.3.0 (2018-09-22)
 ------------------
 * Removed klak.utils.run
