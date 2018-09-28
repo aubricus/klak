@@ -7,4 +7,4 @@ mypy==0.630
 
 # Editor completions
 click==6.7
-path.py==11.3.0
+path.py==11.4.0
