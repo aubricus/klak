@@ -3,7 +3,7 @@ black==18.6b4
 pylint==2.1.1
 pep8==1.7.1
 pydocstyle==2.1.1
-mypy==0.630
+mypy==0.700
 
 # Editor completions
 click==6.7
