@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "klak"
+version = "0.3.3"
+description = "klak is a minimal-wrapper around Python Click to enhance the simplicity of a project Makefile with Python."
+authors = ["Aubrey Taylor <aubricus+klak@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+coverage = "^4.5"
+pytest = "^4.6"
+pytest-runner = "^5.1"
+Sphinx = "^2.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
