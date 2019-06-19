@@ -16,6 +16,8 @@ pytest = "^4.6"
 pytest-runner = "^5.1"
 Sphinx = "^2.1"
 black = "19.3b0"
+mypy = "^0.701.0"
+pdbpp = "^0.10.0"
 
 [tool.poetry.scripts]
 klak = "klak.cli:main"
