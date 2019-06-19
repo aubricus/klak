@@ -14,6 +14,9 @@ pytest = "^4.6"
 pytest-runner = "^5.1"
 Sphinx = "^2.1"
 
+[tool.poetry.scripts]
+klak = "klak.cli:main"
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
