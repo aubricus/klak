@@ -2,7 +2,7 @@
 black==19.3b0
 pylint==2.3.1
 pep8==1.7.1
-pydocstyle==2.1.1
+pydocstyle==3.0.0
 mypy==0.701
 
 # Editor completions
