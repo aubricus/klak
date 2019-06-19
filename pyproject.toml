@@ -7,12 +7,15 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.6"
+click = "^7.0"
+"path.py" = "^12.0"
 
 [tool.poetry.dev-dependencies]
 coverage = "^4.5"
 pytest = "^4.6"
 pytest-runner = "^5.1"
 Sphinx = "^2.1"
+black = "19.3b0"
 
 [tool.poetry.scripts]
 klak = "klak.cli:main"
