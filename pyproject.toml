@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "klak"
-version = "0.3.3"
+version = "0.3.4-dev1"
 description = "klak is a minimal-wrapper around Python Click to enhance the simplicity of a project Makefile with Python."
 authors = ["Aubrey Taylor <aubricus+klak@gmail.com>"]
 license = "MIT"
