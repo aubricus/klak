@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# pylint: disable=no-member
-# -*- coding: utf-8 -*-
-
 """Tests for `klak` CLI."""
 
 import os
@@ -58,7 +54,7 @@ def test_clickfile():
         cli.import_clickfile()
 
         # Our custom command hello_world should now be available
-        result = invoke("hello_world")
+        result = invoke("hello-world")
 
         assert result.exit_code == 0
         assert "hi!" in result.output
@@ -74,5 +70,7 @@ def test_import_missing_clickfile():
 
 def test_missing_clickfile():
     """Test missing Clickfile."""
-    returncode = cli.main()
-    assert returncode == 1
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        returncode = cli.main()
+        assert returncode == 1

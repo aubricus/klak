@@ -1,16 +1,12 @@
+sudo: false
+dist: xenial
 language: python
 python:
-- 3.6
-- 3.5
-install: pip install -U tox-travis
+    - "3.5"
+    - "3.6"
+    - "3.7"
+before_install:
+    - pip install poetry
+install:
+    - poetry install
 script: tox
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: aubricus
-  password:
-    secure: tRzHdwzscAbtCqGQNudyaek6+srqiilH0a7vsibfCVxL3uwJ3/R1+A/O7XxqbyiP/lIFFT28xdtOyGBiiMfKf5EZsr8zmIBMS+Sq11vHtViqSYP0/25ByrFazGbsRIAJ4e4U8x3E1uHPksM4BwNeZHtBm3rYlkBvpwX1HUflTB/w9dT8y3k+Nej0aBVSP5uHM5bxMnZujo0ljM3waCBmfPfcwaM55mIt03md3NTIHduDPmRy0Jg4G3hK/j7Hf5Cj5Q0LjbTo64mwYn0JDi/XrSxdg00VI1aJNVTSiWk3bAsa8hi70GTRsxJaWCq8WiLu4O2/kylzfWqC4j1hsGcJbeU8hEV4uy+OZj635yHntu6DzRsLCjQMlhtYS/nvfa7uh/FAwlYU7Ssu7oaMSI2WTO33KUevUis9aGC1aoQ3aQuT65gzXn5QUlAHqKNKFUNA8hCqL9dF48x/gvKi+7m76ySH2Zde317W2REZkTkDrBMZrYg4EEGQ1yxD3IioQFX7cYa4iY+3CRiuAMzYiwl47S/8WeHqC5jKf4LfxixVtwnXZSC15zMALZWAv1xFL4bbps7Z8Z7cv6MPhLDsprmvq95sAooEER9mLwKAkyV36ockC0hK85fvNXcUXByQYcK39ETj2fSThxH9bugAdAoDvZET1V2uHeDQLYpcyAY5YcY=
-  on:
-    tags: true
-    repo: aubricus/klak
-    python: 3.6

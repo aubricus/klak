@@ -1,0 +1,170 @@
+"""Klak Development Clickfile."""
+
+import os
+import sys
+import logging
+import subprocess
+import webbrowser
+from pathlib import Path
+
+import click
+import toml
+from klak.cli import root
+
+
+logging.basicConfig(level=logging.DEBUG)
+log = logging.getLogger("Clickfile")
+
+
+# -------------------------------------
+# Klak Test
+# -------------------------------------
+
+
+@root.group()
+def tests():
+    """List commands with `klak test`."""
+    pass
+
+
+@tests.command(name="run")
+def tests_run():
+    """Run the test suite."""
+    subprocess.run("py.test", shell=True)
+
+
+@tests.command(name="tox")
+def tests_tox():
+    """Run the test suite under tox."""
+    subprocess.run("tox", shell=True)
+
+
+# -------------------------------------
+# Klak Docs
+# -------------------------------------
+
+
+@root.group()
+def docs():
+    """List commands with `klak docs`."""
+    pass
+
+
+@docs.command(name="build-module")
+def docs_build_module():
+    """Build klak auto-module docs."""
+    subprocess.run("rm -rf docs/klak.rst docs/modules.rst", shell=True)
+    subprocess.run("sphinx-apidoc -o docs/ klak", shell=True)
+
+
+@docs.command(name="build-html")
+def docs_build_html():
+    """Build klack html docs."""
+    cwd = os.getcwd()
+    os.chdir("./docs")
+    subprocess.run("make clean", shell=True)
+    subprocess.run("make html", shell=True)
+    os.chdir(cwd)
+
+
+@docs.command(name="build")
+@click.pass_context
+def docs_build(ctx):
+    """Build package docs."""
+    ctx.invoke(docs_build_module)
+    ctx.invoke(docs_build_html)
+
+
+@docs.command(name="watch")
+def docs_watch():
+    """Watch docs directory for changes and rebuld."""
+    click.secho("Watching *.rst...", fg="green")
+    subprocess.run(
+        "watchmedo shell-command -p '*.rst' -c 'klak docs build-html' -R -D . ",
+        shell=True,
+    )
+
+
+@docs.command(name="serve")
+def docs_serve():
+    """Serve package docs locally."""
+    subprocess.run(
+        "python -m http.server --directory ./docs/_build/html 8001", shell=True
+    )
+
+
+@docs.command(name="browse")
+def docs_browse():
+    """Browse docs locally, requires `klak docs serve` is running."""
+    subprocess.run("python -m webbrowser -t 'http://localhost:8001'", shell=True)
+
+
+# -------------------------------------
+# Klak Clean
+# -------------------------------------
+
+
+@root.group()
+def clean():
+    """List commands with `klak clean`."""
+
+
+@clean.command(name="build")
+def clean_build():
+    """Clean build artifacts."""
+    click.secho("Cleaning build artifacts...", fg="green")
+    subprocess.run("rm -rf build/ dist/ .eggs/", shell=True)
+    subprocess.run("find . -name '*.egg-info' -exec rm -fr {} +", shell=True)
+    subprocess.run("find . -name '*.egg' -exec rm -rf {} +", shell=True)
+
+
+@clean.command(name="pyc")
+def clean_pyc():
+    """Clean Python file artifacts."""
+    click.secho("Cleaning Python file artifacts...", fg="green")
+    subprocess.run("find . -name '*.pyc' -exec rm -f {} +", shell=True)
+    subprocess.run("find . -name '*.pyo' -exec rm -f {} +", shell=True)
+    subprocess.run("find . -name '*~' -exec rm -f {} +", shell=True)
+    subprocess.run("find . -name '__pycache__' -exec rm -fr {} +", shell=True)
+
+
+@clean.command(name="test")
+def clean_test():
+    """Clean test and coverage artifacts."""
+    click.secho("Cleaning test artifacts...", fg="green")
+    subprocess.run("rm -rf .tox/ .coverage .htmlcov", shell=True)
+
+
+@clean.command(name="all")
+@click.pass_context
+def clean_all(ctx):
+    """Run all clean commands."""
+    ctx.invoke(clean_build)
+    ctx.invoke(clean_pyc)
+    ctx.invoke(clean_test)
+
+
+# -------------------------------------
+# Klak Dist
+# -------------------------------------
+
+
+@root.group()
+def dist():
+    """List commands with `klak dist`."""
+
+
+@dist.command(name="build")
+def dist_build():
+    """Build package."""
+    subprocess.run("poetry build -vvv", shell=True)
+
+
+@dist.command(name="publish")
+def dist_publish():
+    """Publish package."""
+    private = toml.load(Path.cwd().joinpath("private.toml"))
+    pypi = private["pypi"]
+    username = pypi["username"]
+    password = pypi["password"]
+    subprocess.run(f"poetry publish -vvv -u {username} -p {password}", shell=True)
