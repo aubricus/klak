@@ -22,13 +22,13 @@ log = logging.getLogger("Clickfile")
 
 
 @root.group()
-def test():
+def tests():
     """List commands with `klak test`."""
     pass
 
 
-@test.command()
-def run():
+@tests.command(name="run")
+def tests_run():
     """Run the test suite."""
     subprocess.run("py.test", shell=True)
 
