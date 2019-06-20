@@ -33,6 +33,12 @@ def tests_run():
     subprocess.run("py.test", shell=True)
 
 
+@tests.command(name="tox")
+def tests_tox():
+    """Run the test suite under tox."""
+    subprocess.run("tox", shell=True)
+
+
 # -------------------------------------
 # Klak Docs
 # -------------------------------------
