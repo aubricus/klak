@@ -69,11 +69,50 @@ poetry install
 
 ## Usage
 
-Klak provides a single entry point—`klak`. What happens next is up to you!
+To get started with Klak you must add a **Clickfile**. Here's an example **Clickfile** to get started:
+
+```python
+"""Example Clickfile."""
+
+import logging
+import click
+from klak.cli import cli
+
+
+log = logging.getLogger("Clickfile")
+
+
+# -------------------------------------
+# Examples
+# -------------------------------------
+
+
+# Example: Add a command
+@cli.command()
+@click.argument("name")
+def greet(name):
+    """Greet someone."""
+    click.secho(f"Hello, {name}")
+
+
+# Example: Add a group and sub-command.
+@cli.group()
+def humans():
+    """Humans command group."""
+    pass
+
+
+@humans.command(name="count")
+def humans_count():
+    """Count all the humans."""
+    click.secho("Over 9000!!!")
+
+```
+
+Once your **Clickfile** is ready you can access commands through `klak`.
 
 ```bash
-# See full usage.
-klak --help
+$ klak --help
 ```
 
 ## Maintainers
