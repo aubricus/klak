@@ -9,7 +9,7 @@ from pathlib import Path
 
 import click
 import toml
-from klak.cli import root
+from klak.cli import cli
 
 
 logging.basicConfig(level=logging.DEBUG)
@@ -21,7 +21,7 @@ log = logging.getLogger("Clickfile")
 # -------------------------------------
 
 
-@root.group()
+@cli.group()
 def tests():
     """List commands with `klak test`."""
     pass
@@ -44,7 +44,7 @@ def tests_tox():
 # -------------------------------------
 
 
-@root.group()
+@cli.group()
 def docs():
     """List commands with `klak docs`."""
     pass
@@ -104,7 +104,7 @@ def docs_browse():
 # -------------------------------------
 
 
-@root.group()
+@cli.group()
 def clean():
     """List commands with `klak clean`."""
 
@@ -149,7 +149,7 @@ def clean_all(ctx):
 # -------------------------------------
 
 
-@root.group()
+@cli.group()
 def dist():
     """List commands with `klak dist`."""
 
