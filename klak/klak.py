@@ -3,6 +3,7 @@
 import os
 import logging
 import toml
+import click
 from importlib.util import spec_from_loader, module_from_spec
 from importlib.machinery import SourceFileLoader
 from typing import MutableMapping
@@ -34,7 +35,7 @@ def import_clickfile():
         return import_module_from_file("Clickfile", str(clickfile_path))
     else:
         raise click.exceptions.FileError(
-            clickfile_path, hint="Error: Could not find Clickfile!"
+            str(clickfile_path), hint="Error: Could not find Clickfile!"
         )
 
 

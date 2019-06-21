@@ -22,6 +22,7 @@ def cli(ctx, version: bool) -> None:
 
 def main() -> None:
     """Console script for klak."""
+
     try:
         import_clickfile()
     except click.exceptions.FileError as exception:
