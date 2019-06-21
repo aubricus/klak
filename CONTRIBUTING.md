@@ -33,24 +33,30 @@ and "help wanted" is open to whoever wants to implement it.
 
 ### Write Documentation
 
-klak could always use more documentation, whether as part of the
-official klak docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+Klak could always use more documentation, whether as part of the
+official Klak docs, in docstrings, or even on the web in blog posts,
+articles.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/aubricus/klak/issues.
+The best way to send feedback is to [submit an issue](https://github.com/aubricus/klak/issues).
 
 If you are proposing a feature:
 
 -   Explain in detail how it would work.
 -   Keep the scope as narrow as possible, to make it easier to implement.
 -   Remember that this is a volunteer-driven project, and that contributions
-    are welcome :)
+    are welcome.
 
 ## Getting Started
 
 Ready to contribute? Here's how to setup `klak` for local development.
+
+### Style
+
+Developers must configure their editor to:
+
+-   Auto-format with [Python Black](https://github.com/python/black) (installed via Poetry).
 
 ### System Setup
 
@@ -136,7 +142,7 @@ $ tox
 
 ### Submit a Pull Request
 
-Once you've added your changes, run the test suite (successfully), [create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork).
+Once you've added your changes and run the test suite (successfully) [create a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork).
 
 **Pull Request Guidelines**:
 
@@ -152,9 +158,9 @@ Once you've added your changes, run the test suite (successfully), [create a pul
 1. Create a release branch using GitFlow.
 2. Run tests and make any last minute fixes.
 3. Update the [HISTORY.md](HISTORY.rst) changelog!
-4. Bump the version in the `pyproject.toml`
-5. Create a pull request
-6. Once the pull request is merged into master:
+4. Bump the version in the `pyproject.toml`.
+5. Create a pull request.
+6. Once the pull request is merged into master, build & publish:
 
 ```bash
 # NOTE: Update local to latest
