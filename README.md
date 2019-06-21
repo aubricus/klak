@@ -115,6 +115,20 @@ Once your **Clickfile** is ready you can access commands through `klak`.
 $ klak --help
 ```
 
+## Support
+
+This project is a hobby/passion project which I maintain in my own time.
+
+### Python
+
+-   Python 3.5+
+
+### OS
+
+-   Linux ✓
+-   MacOS ✓
+-   Windows ✘ (any volunteers?)
+
 ## Maintainers
 
 [@aubricus](https://github.com/aubricus)
