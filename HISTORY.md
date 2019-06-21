@@ -1,5 +1,13 @@
 # History
 
+## 0.4.0 (2019-06-21)
+
+-   Refactor Klak distribution
+-   Refactor docs structure and content
+-   Renamed `cli.root` to `cli.cli`. Users should now import `from klak.cli import cli` (this is a breaking change)
+-   Added a `-v/--version` flag to print the current version
+-   Removed dependency on path.py
+
 ## 0.3.3 (2018-09-23)
 
 -   Forgot to update HISTORY.rst!

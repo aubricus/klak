@@ -165,6 +165,7 @@ Once you've added your changes and run the test suite (successfully) [create a p
 
 ```bash
 # NOTE: Update local to latest
+$ git checkout master
 $ git fetch --all
 $ git merge --ff-only origin/master
 

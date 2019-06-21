@@ -26,22 +26,19 @@
 
 ## Background
 
-Automating project tasks with Makefiles is convenient and the simple interface, `make <command>`, is _very ergonomic_. Unfortunately, Make syntax is archaic and ill-suited for self-documenting, full-featured command-line interfaces.
+Makefiles provide an simple interface, `make <command>`, that is great for automating project tasks. Makefile syntax, however, is archaic, error-prone, and ill-suited for constructing modern command-line interfaces.
 
-Python—however—is built for scripting and paired with [Click] it's easy great command-line interfaces!
+Python, on the other hand, is _great_ at scripting and [Click] makes creating modern, useful command-line interfaces easy!
 
-Enter Klak.
+Is there a way we can combine the power of Python and Click into a "Makefile like" experience?
 
-Klak provides a _very minimal_ wrapper around Click allowing the import of a local **Clickfile** providing the ergonomics of a project Makefile—`klak <command>`—but also provides the ease of Python and power of Click.
+_Enter Klak_.
 
-### Features
+Klak exposes a single, global entry-point, `klak` which auto-loads a 100%, vanilla Python file called a **Clickfile**. All CLI is built using standard Python and Click and all commands are available via: `klak <command>` (see [Usage](#usage)).
 
--   Exposes a global interface, `klak`.
--   Auto-loads a local **Clickfile** (form the current working directory)
--   Easily append commands to the CLI root
--   Easily append sub-command groups
--   [Click Bash completions]
--   Ships with [Click] already setup using the recommended [Click Setuptools Integration]
+### What is it good for?
+
+Klak's purpose is to provide a convenient, single-file experince for automating simple project tasks. It does not, nor will it ever intend to replace Make or Makefiles.
 
 ## Install
 

@@ -6,10 +6,9 @@ import shutil
 import tempfile
 import pytest
 import click
+from pathlib import Path
 from click.testing import CliRunner
-from path import Path
-from klak import klak
-from klak import cli
+from klak import klak, cli
 
 
 def invoke(*args):
@@ -22,9 +21,9 @@ class Paths(enum.Enum):
     """Test Paths."""
 
     FilePath = Path(__file__)
-    FileDir = FilePath.dirname()
-    MocksDir = Path(os.path.join(FileDir, "mocks"))
-    MockClickfilePath = Path(os.path.join(MocksDir, "Clickfile"))
+    FileDir = FilePath.parent
+    MocksDir = FileDir.joinpath("mocks")
+    MockClickfilePath = MocksDir.joinpath("Clickfile")
 
     @staticmethod
     def get_clickfile_path() -> Path:
@@ -44,9 +43,11 @@ def test_import_clickfile():
     runner = CliRunner()
     with runner.isolated_filesystem() as temp_dir:
         _tmp = Path(temp_dir)
-        _clickfile = Paths.get_clickfile_path().copy(_tmp)
 
-        assert _clickfile.isfile()
+        shutil.copy(str(Paths.get_clickfile_path()), str(_tmp))
+
+        _clickfile = _tmp.joinpath("Clickfile")
+        assert _clickfile.is_file()
 
         # Call import_clickfile manually
         # since the CliRunner cannot use the runner to invoke
