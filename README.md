@@ -109,7 +109,7 @@ def humans_count():
 
 ```
 
-Once your **Clickfile** is ready you can access commands through `klak`.
+Once your **Clickfile** is ready, access commands through `klak`.
 
 ```bash
 $ klak --help
