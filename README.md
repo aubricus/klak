@@ -26,19 +26,19 @@
 
 ## Background
 
-Makefiles provide an simple interface, `make <command>`, that is great for automating project tasks. Makefile syntax, however, is archaic, error-prone, and ill-suited for constructing modern command-line interfaces.
+Makefiles provide a simple interface, `make <command>`, that is great for automating repetitive project tasks. Makefile syntax, however, is archaic, error-prone, and ill-suited for constructing modern, useful command-line interfaces.
 
-Python, on the other hand, is _great_ at scripting and [Click] makes creating modern, useful command-line interfaces easy!
+Python, on the other hand, has wonderful syntax and is _great_ for scripting. When Python is paired with [Click] constructing modern, useful command-line interfaces is easy!
 
 Is there a way we can combine the power of Python and Click into a "Makefile like" experience?
 
 _Enter Klak_.
 
-Klak exposes a single, global entry-point, `klak` which auto-loads a 100%, vanilla Python file called a **Clickfile**. All CLI is built using standard Python and Click and all commands are available via: `klak <command>` (see [Usage](#usage)).
+Klak exposes a single entry-point—`klak`—which auto-loads a _100%_, vanilla Python file called a **Clickfile**. All CLI is built using standard Python and Click, and all commands are available via: `klak <command>` (see [Usage](#usage)).
 
 ### What is it good for?
 
-Klak's purpose is to provide a convenient, single-file experince for automating simple project tasks. It does not, nor will it ever intend to replace Make or Makefiles.
+Klak's purpose is to provide a convenient, single-file experince for automating repetitive project tasks. It does not, nor will it ever, intend to replace Make or Makefiles.
 
 ## Install
 
@@ -66,10 +66,15 @@ poetry install
 
 ## Usage
 
-To get started with Klak you must add a **Clickfile**. Here's an example **Clickfile** to get started:
+To get started with Klak create a **Clickfile**. Here's an example **Clickfile** to get started:
 
 ```python
-"""Example Clickfile."""
+"""
+Example Clickfile.
+
+NOTE: Set your editor's language mode to Python to
+      enable syntax highlighting! :^)
+"""
 
 import logging
 import click
@@ -84,7 +89,7 @@ log = logging.getLogger("Clickfile")
 # -------------------------------------
 
 
-# Example: Add a command
+# Example: Add a command.
 @cli.command()
 @click.argument("name")
 def greet(name):
