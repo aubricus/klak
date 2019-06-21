@@ -15,7 +15,7 @@ from klak import cli
 def invoke(*args):
     """Provide convenience call to test klak cli."""
     runner = CliRunner()
-    return runner.invoke(cli.root, args)
+    return runner.invoke(cli.cli, args)
 
 
 class Paths(enum.Enum):
@@ -35,11 +35,11 @@ class Paths(enum.Enum):
 def test_command_line_interface():
     """Test the CLI."""
     runner = CliRunner()
-    result = runner.invoke(cli.root)
+    result = runner.invoke(cli.cli)
     assert result.exit_code == 0
 
 
-def test_clickfile():
+def test_import_clickfile():
     """Test Clickfile."""
     runner = CliRunner()
     with runner.isolated_filesystem() as temp_dir:
@@ -51,7 +51,7 @@ def test_clickfile():
         # Call import_clickfile manually
         # since the CliRunner cannot use the runner to invoke
         # cli.main directly.
-        cli.import_clickfile()
+        klak.import_clickfile()
 
         # Our custom command hello_world should now be available
         result = invoke("hello-world")
@@ -65,12 +65,5 @@ def test_import_missing_clickfile():
     runner = CliRunner()
     with runner.isolated_filesystem():
         with pytest.raises(click.exceptions.FileError):
-            cli.import_clickfile()
+            klak.import_clickfile()
 
-
-def test_missing_clickfile():
-    """Test missing Clickfile."""
-    runner = CliRunner()
-    with runner.isolated_filesystem():
-        returncode = cli.main()
-        assert returncode == 1

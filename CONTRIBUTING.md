@@ -56,6 +56,7 @@ Ready to contribute? Here's how to setup `klak` for local development.
 
 Developers must configure their editor to:
 
+-   Support [EditorConfg](https://editorconfig.org/#download).
 -   Auto-format with [Python Black](https://github.com/python/black) (installed via Poetry).
 
 ### System Setup
