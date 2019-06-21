@@ -5,11 +5,6 @@
 ## Table of Contents
 
 -   [Types of Contributions](#types-of-contributions)
-    -   [Report Bugs](#report-bugs)
-    -   [Fix Bugs](#fix-bugs)
-    -   [Implement Features](#implement-features)
-    -   [Write Documentation](#write-documentation)
-    -   [Submit Feedback](#submit-feedback)
 -   [Getting Started](#getting-started)
 -   [Create and Publish a Release](#create-and-publish-a-release)
 
@@ -160,20 +155,45 @@ Once you've added your changes and run the test suite (successfully) [create a p
 2. Run tests and make any last minute fixes.
 3. Update the [HISTORY.md](HISTORY.rst) changelog!
 4. Bump the version in the `pyproject.toml`.
-5. Create a pull request.
-6. Once the pull request is merged into master, build & publish:
+5. Before submitting a pull request, squash any commits on the release branch:
 
 ```bash
-# NOTE: Update local to latest
-$ git checkout master
+# NOTE: From the release/v<version_number> branch.
+$ git rebase -i <earliest_commit_hash>^
+
+# NOTE: Use "reword" the earliest commit.
+# NOTE: Use "squash" for all others.
+
+# NOTE: The new commit message should look like:
+#
+# Release: v<version_number>
+#
+# * Original commit message 1
+#
+# * Original commit message 2
+#
+# * Original commit message 3
+
+```
+
+5. Create a pull request against develop and master.
+6. Once the pull request is merged:
+
+```bash
+# NOTE: Update local to latest.
 $ git fetch --all
+
+$ git checkout master
 $ git merge --ff-only origin/master
 
-# NOTE: Create a new tag
+$ git checkout develop
+$ git merge --ff-only origin/develop
+
+# NOTE: Create a new tag.
 $ git tag -a v<version_number> -m "Release of version v<version_number>"
 $ git push --tags
 
-# NOTE: Use Clickfile scripts to publish release to PyPI
+# NOTE: Use Clickfile scripts to publish release to PyPI.
 $ klak dist build
 $ klak dist publish
 ```

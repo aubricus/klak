@@ -1,5 +1,12 @@
 # History
 
+## 0.4.1 (2019-06-21)
+
+-   Revised README.md copy
+-   Fix typos in README.md
+-   Revised CONTRIBUTING.md copy
+-   Add additional information to pyproject.toml
+
 ## 0.4.0 (2019-06-21)
 
 -   Refactor Klak distribution
