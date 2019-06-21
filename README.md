@@ -13,7 +13,7 @@
 
 <!-- NOTE: If you update this line, update pyproject.toml -->
 
-> `klak` provides the ergonoics of a project Makefile with the easy of Python and power of [Click].
+> Klak provides the ergonoics of a project Makefile with the ease of Python and power of [Click].
 
 ## Table of Contents
 
@@ -26,27 +26,29 @@
 
 ## Background
 
-Automating project tasks with Makefiles is simple and `make <command>` is _very ergonomic_. Unfortunately, Make syntax is archaic and ill-suited for self-documenting, full-featured command-line interfaces.
+Automating project tasks with Makefiles is convenient and the simple interface, `make <command>`, is _very ergonomic_. Unfortunately, Make syntax is archaic and ill-suited for self-documenting, full-featured command-line interfaces.
 
-Python, however, is built for scripting and paired with [Click] it's easy great command-line interfaces!
+Python—however—is built for scripting and paired with [Click] it's easy great command-line interfaces!
 
-This is where Klack comes in. Klak provides a _very minimal_ wrapper around Click which allows it to import a local **Clickfile** providing the ergonomics of a project Makefile, i.e., `klak <command>`, but also provides the ease of Python and power of Click.
+Enter Klak.
 
-## Features
+Klak provides a _very minimal_ wrapper around Click allowing the import of a local **Clickfile** providing the ergonomics of a project Makefile—`klak <command>`—but also provides the ease of Python and power of Click.
+
+### Features
 
 -   Exposes a global interface, `klak`.
--   Auto-loads a local **Clickfile** (form the curren working directory)
--   Allows users to easily append commands to the default, Klak CLI root
--   Allows users to easily append sub-command groups
--   Compatible with [Click Bash completions]
--   Ships with [Click] setup using the recommended [Click Setuptools Integration]
+-   Auto-loads a local **Clickfile** (form the current working directory)
+-   Easily append commands to the CLI root
+-   Easily append sub-command groups
+-   [Click Bash completions]
+-   Ships with [Click] already setup using the recommended [Click Setuptools Integration]
 
 ## Install
 
 ### Stable Release
 
 ```bash
-# NOTE: This is the recommended method of install
+# NOTE: This is the recommended method of installation.
 pip install klak
 ```
 
@@ -67,10 +69,10 @@ poetry install
 
 ## Usage
 
-Klak provides a simple global entry point `klak`. What happens next is up to you!
+Klak provides a single entry point—`klak`. What happens next is up to you!
 
 ```bash
-# See full usage
+# See full usage.
 klak --help
 ```
 
@@ -84,7 +86,7 @@ See [the contributing file](CONTRIBUTING.md)!
 
 PRs accepted!
 
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+Please note, if editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 

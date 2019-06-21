@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "klak"
 version = "0.3.4-dev"
-description = "klak provides the ergonoics of a project Makefile with the easy of Python and power of Click."
+description = "Klak provides the ergonoics of a project Makefile with the ease of Python and power of Click."
 authors = ["Aubrey Taylor <aubricus+klak@gmail.com>"]
 license = "MIT"
 
