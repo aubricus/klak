@@ -1,5 +1,9 @@
 # History
 
+## 0.4.2 (2019-06-21)
+
+-   Add missing toml dependency
+
 ## 0.4.1 (2019-06-21)
 
 -   Revised README.md copy

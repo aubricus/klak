@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "klak"
-version = "0.4.1"
+version = "0.4.2"
 description = "Klak provides the ergonoics of a project Makefile with the ease of Python and power of Click."
 authors = ["Aubrey Taylor <aubricus+klak@gmail.com>"]
 readme = "README.md"
@@ -18,6 +18,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.5"
 click = "^7.0"
+toml = "^0.10.0"
 
 [tool.poetry.dev-dependencies]
 coverage = "^4.5"
