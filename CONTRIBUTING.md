@@ -154,7 +154,7 @@ Once you've added your changes and run the test suite (successfully) [create a p
 1. Create a release branch using GitFlow.
 2. Run tests and make any last minute fixes.
 3. Update the [HISTORY.md](HISTORY.rst) changelog!
-4. Bump the version in the `pyproject.toml`.
+4. Bump the version in the `pyproject.toml` and `klak.py`
 5. Before merging a releae branch squash any commits on the release branch:
 
 ```bash
