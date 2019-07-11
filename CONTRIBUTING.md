@@ -147,25 +147,29 @@ Once you've added your changes and run the test suite (successfully) [create a p
 3. Check [Travis-CI](https://travis-ci.org/aubricus/klak/pull_requests) and make sure that the tests pass for all supported Python versions.
 4. If necessary update the documentation.
 
-## Create and Publish a Release
+## Create a Release
 
-> A reminder for the maintainers.
+Create a release branch using `git flow release start <version_number>`.
 
-1. Create a release branch using GitFlow.
-2. Run tests and make any last minute fixes.
-3. Update the [HISTORY.md](HISTORY.rst) changelog!
-4. Bump the version in the `pyproject.toml` and `klak.py`
-5. Before merging a releae branch squash any commits on the release branch:
+### Release Checklist
+
+-   [ ] Run tests and make any last minute fixes.
+-   [ ] Bump the version in the `pyproject.toml` and `klak.py`
+-   [ ] Update the [HISTORY.md](HISTORY.md)
+-   [ ] Push branch to GitHub to trigger tests in [Travis-CI](https://travis-ci.org/aubricus/klak).
+-   [ ] Finalize release (see below).
+
+#### Finalize Release
+
+To keep the commit history as clean as possible, re-write the release branch history (**note**: use `r` for first commit and `s` for all others during interactive rebase):
 
 ```bash
-# NOTE: From the release/v<version_number> branch.
 $ git rebase -i <earliest_commit_hash>^
+```
 
-# NOTE: Use "reword" the earliest commit.
-# NOTE: Use "squash" for all others.
+The new commit message should look like:
 
-# NOTE: The new commit message should look like:
-#
+```bash
 # Release: v<version_number>
 #
 # * Original commit message 1
@@ -176,7 +180,9 @@ $ git rebase -i <earliest_commit_hash>^
 
 ```
 
-6. Merge the release branch into develop and master:
+### Publish Release
+
+**Note**: Git Flow mangles repo history, so we'll follow the model manually.
 
 ```bash
 # NOTE: Update local to latest.
@@ -202,4 +208,6 @@ $ git push
 $ git branch -D release/<version_number>
 ```
 
-7. Finally, Check the [PyPI listing page](https://pypi.org/project/klak/) to verify publish was successful.
+### Post-Publish
+
+Check the [PyPI listing page](https://pypi.org/project/klak/) to verify publish was successful.

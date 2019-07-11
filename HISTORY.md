@@ -1,5 +1,10 @@
 # History
 
+## 0.4.3 (2019-07-10)
+
+-   Fixed bug when running `klak --version`
+-   Clickfile can now import modules from packages in the same directory
+
 ## 0.4.2 (2019-06-21)
 
 -   Add missing toml dependency
