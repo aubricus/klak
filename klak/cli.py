@@ -3,7 +3,8 @@
 import sys
 import logging
 import click
-from .klak import import_clickfile, get_version
+from pathlib import Path
+from .klak import import_clickfile, get_version, append_path
 
 
 log = logging.getLogger(__name__)
@@ -23,14 +24,18 @@ def cli(ctx, version: bool) -> None:
 def main() -> None:
     """Console script for klak."""
 
+    with append_path(Path.cwd()):
+        run()
+
+
+def run() -> None:
     try:
         import_clickfile()
     except click.exceptions.FileError as exception:
         click.secho("\n{error}\n".format(error=str(exception)), fg="red", bold=True)
         sys.exit(1)
 
-    cli()
-    sys.exit(0)
+    sys.exit(cli())
 
 
 if __name__ == "__main__":
