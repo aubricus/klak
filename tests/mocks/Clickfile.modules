@@ -1,0 +1,11 @@
+"""Mock Clickfile"""
+
+import click
+from klak.cli import cli
+from tasks import ducks
+
+
+@cli.command()
+def hello_world():
+    """Hello world."""
+    click.echo("hi!")
