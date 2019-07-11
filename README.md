@@ -66,7 +66,7 @@ poetry install
 
 ## Usage
 
-To get started with Klak create a **Clickfile**. Here's an example **Clickfile** to get started:
+To get started with Klak create a **Clickfile**. Here's a simple **Clickfile** to get started:
 
 ```python
 """
@@ -87,7 +87,6 @@ log = logging.getLogger("Clickfile")
 # -------------------------------------
 # Examples
 # -------------------------------------
-
 
 # Example: Add a command.
 @cli.command()
@@ -110,6 +109,8 @@ def humans_count():
     click.secho("Over 9000!!!")
 
 ```
+
+**NOTE**: You can also organize commands into a python package in the same directory. See [Klak/Pull/229](https://github.com/aubricus/klak/pull/229).
 
 Once your **Clickfile** is ready, access commands through `klak`.
 
