@@ -15,11 +15,13 @@ VERSION = "0.4.3"
 
 def get_version() -> str:
     """Return current klak version."""
+
     return VERSION
 
 
 def import_clickfile():
     """Import a python file named Clickfile from os.getcwd()."""
+
     cwd = Path.cwd()
     clickfile_path = cwd.joinpath("Clickfile")
 
@@ -33,6 +35,7 @@ def import_clickfile():
 
 def import_module_from_file(module_name, path):
     """Load a modules from a raw file path."""
+
     loader = SourceFileLoader(module_name, path)
     spec = spec_from_loader(module_name, loader)
     module = module_from_spec(spec)
