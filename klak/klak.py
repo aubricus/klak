@@ -2,7 +2,6 @@
 
 import os
 import logging
-import toml
 import click
 from importlib.util import spec_from_loader, module_from_spec
 from importlib.machinery import SourceFileLoader
@@ -11,19 +10,12 @@ from pathlib import Path
 
 
 log = logging.getLogger(__name__)
+VERSION = "0.4.3"
 
 
 def get_version() -> str:
     """Return current klak version."""
-    pyproject_path = Path(__file__).parent.parent.joinpath("pyproject.toml")
-    if pyproject_path.exists():
-        pyproject = toml.load(str(pyproject_path))
-        version = pyproject["tool"]["poetry"]["version"]
-    else:
-        log.error("Could not read pyproject.toml to determine version.")
-        version = "Unknown"
-
-    return version
+    return VERSION
 
 
 def import_clickfile():
